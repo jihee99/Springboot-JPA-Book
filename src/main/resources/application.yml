@@ -1,4 +1,17 @@
 spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
   devtools:
     livereload:
       enabled: true
@@ -6,3 +19,7 @@ spring:
       enabled: true
   thymeleaf:
     cache: false
+
+logging:
+  level:
+    org.hibernate.sql: debug
