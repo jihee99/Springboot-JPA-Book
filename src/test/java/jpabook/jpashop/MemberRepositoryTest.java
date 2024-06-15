@@ -1,7 +1,5 @@
 package jpabook.jpashop;
 
-import static org.junit.Assert.*;
-
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -33,6 +31,9 @@ public class MemberRepositoryTest {
 	    // then
 		Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
 		Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+		Assertions.assertThat(findMember).isEqualTo(member);
+
+		System.out.println("findMember equals member : " + (findMember == member));
 
 	}
 }
